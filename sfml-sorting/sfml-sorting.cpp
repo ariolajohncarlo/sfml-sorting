@@ -2,6 +2,7 @@
 //
 
 #include "sfml-sorting.h"
+#include "Bar.h"
 #include "RandomNumberGenerator.h"
 #include <SFML/Graphics.hpp>
 #include <vector>
@@ -12,19 +13,16 @@ int main()
     sf::RenderWindow window(sf::VideoMode(500, WINDOW_HEIGHT), "Bubble sort demo");
     RandomNumberGenerator rng(1, WINDOW_HEIGHT);
     const int INTERVAL = 10;
-    std::vector<sf::RectangleShape> rectangles;
+    std::vector<Bar> bars;
 
     for (int i = 0; i < 50; ++i)
     {
         auto height = static_cast<float>(rng.GenerateRandomNumber());
-        sf::RectangleShape rectangle(sf::Vector2f{10, height});
-        rectangle.setOutlineColor(sf::Color::White);
-        rectangle.setOutlineThickness(1);
-        rectangle.setFillColor(sf::Color::Green);
-        rectangle.setPosition(INTERVAL * i, WINDOW_HEIGHT);
-        rectangle.setOrigin(sf::Vector2f{0, height});
-        rectangles.push_back(rectangle);
+        Bar bar(height);
+        bar.setPosition(INTERVAL * i, WINDOW_HEIGHT);
+        bars.push_back(bar);
     }
+
 
     while (window.isOpen())
     {
@@ -36,10 +34,11 @@ int main()
         }
 
         window.clear();
-        for(const auto& rectangle : rectangles)
+        for(const auto& bar : bars)
         {
-            window.draw(rectangle);
+            window.draw(bar);
         }
+
         window.display();
     }
 
