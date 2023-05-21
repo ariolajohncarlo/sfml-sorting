@@ -248,3 +248,7 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+# GTest generated files
+*_tests.cmake
+*_include.cmake
