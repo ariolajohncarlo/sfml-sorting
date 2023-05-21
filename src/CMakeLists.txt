@@ -3,10 +3,9 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
-add_library(shapes Bar.cpp)
-add_library(utils RandomNumberGenerator.cpp)
+add_subdirectory(shapes)
+add_subdirectory(utils)
 
-# Add source to this project's executable.
 add_executable (sfml-sorting sfml-sorting.cpp sfml-sorting.h)
 
 target_link_libraries(sfml-sorting sfml-graphics sfml-audio shapes utils)
