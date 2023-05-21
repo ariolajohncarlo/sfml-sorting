@@ -2,8 +2,8 @@
 //
 
 #include "sfml-sorting.h"
-#include "Bar.h"
-#include "RandomNumberGenerator.h"
+#include "shapes/Bar.h"
+#include "utils/RandomNumberGenerator.h"
 #include <SFML/Graphics.hpp>
 #include <vector>
 
