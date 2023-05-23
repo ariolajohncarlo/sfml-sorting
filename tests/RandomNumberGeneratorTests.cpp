@@ -8,5 +8,5 @@ TEST(RandomNumberGeneratorTests, AssertCorrectMaxAndMinValues)
     RandomNumberGenerator randomNumberGenerator{MIN, MAX};
 
     EXPECT_EQ(randomNumberGenerator.GetMin(), MIN);
-    EXPECT_EQ(randomNumberGenerator.GetMax(), MAX);
+    EXPECT_EQ(randomNumberGenerator.GetMax(), MIN);
 }
