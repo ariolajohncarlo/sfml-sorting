@@ -4,6 +4,7 @@
 cmake_minimum_required(VERSION 3.23)
 
 project("sfml-sorting")
+include(CTest)
 
 set(CMAKE_CXX_STANDARD 14)
 
