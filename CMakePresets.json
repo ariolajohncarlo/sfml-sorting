@@ -29,5 +29,17 @@
             "name": "linux-debug",
             "configurePreset": "linux-debug"
         }
+    ],
+    "testPresets":
+    [
+        {
+            "name": "linux-debug",
+            "configurePreset": "linux-debug",
+            "output": {"verbosity": "verbose"},
+            "environment":
+            {
+                "GTEST_COLOR": "1"
+            }
+        }
     ]
 }
