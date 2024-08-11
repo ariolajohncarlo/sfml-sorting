@@ -1,10 +1,11 @@
 #include "RandomNumberGenerator.h"
+
 #include <cstdlib>
 #include <ctime>
 
-RandomNumberGenerator::RandomNumberGenerator(int min, int max)
-    : min(min)
-    , max(max)
+RandomNumberGenerator::RandomNumberGenerator(int min, int max) :
+    min(min),
+    max(max)
 {
     srand((unsigned) time(0));
 }
