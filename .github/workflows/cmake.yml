@@ -14,14 +14,11 @@ jobs:
     build:
         name: Check
         runs-on: ubuntu-latest
+        container: docker.io/ariolajohncarlo/sfml:1.2.0
 
         steps:
         - name: Setup repository
           uses: actions/checkout@v4
-
-        - name: Install packages
-          run:
-            sudo apt-get install -y libsfml-dev g++
 
         - name: Configure CMake
           run: cmake --preset ${{ env.PRESET }}
