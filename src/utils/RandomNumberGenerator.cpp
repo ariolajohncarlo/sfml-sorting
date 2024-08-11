@@ -22,6 +22,6 @@ int RandomNumberGenerator::GetMin() const
 
 int RandomNumberGenerator::GenerateRandomNumber() const
 {
-    auto numberGenerated = ((rand() % max) + min);
-    return static_cast<int>(numberGenerated);
+    auto numberGenerated = rand() % (max - min + 1) + min;
+    return numberGenerated;
 }
