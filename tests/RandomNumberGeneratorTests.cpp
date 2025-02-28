@@ -1,6 +1,6 @@
-#include <gtest/gtest.h>
+#include "RandomNumberGenerator.h"
 
-#include "../src/utils/RandomNumberGenerator.h"
+#include <gtest/gtest.h>
 
 TEST(RandomNumberGeneratorTests, AssertCorrectMaxAndMinValues)
 {
