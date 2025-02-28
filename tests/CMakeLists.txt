@@ -11,8 +11,18 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 if(BUILD_TESTING)
-    add_executable(ctest-run-tests RandomNumberGeneratorTests.cpp)
-    target_link_libraries(ctest-run-tests PRIVATE GTest::gtest_main utils)
+    add_executable(ctest-run-tests
+        RandomNumberGeneratorTests.cpp
+    )
+
+    target_link_libraries(ctest-run-tests
+        PRIVATE
+            GTest::gtest_main
+            utils)
+
+    target_include_directories(ctest-run-tests
+        PUBLIC
+            ${CMAKE_SOURCE_DIR}/src/utils)
 
     include(GoogleTest)
     gtest_discover_tests(ctest-run-tests)
