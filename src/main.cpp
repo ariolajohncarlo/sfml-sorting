@@ -8,14 +8,17 @@
 
 #include <vector>
 
-int main()
+namespace
 {
-    const int WINDOW_HEIGHT = 100;
-    const int BAR_COUNT = 50;
+    constexpr int WINDOW_HEIGHT = 600;
+    constexpr int BAR_COUNT = 100;
+    constexpr int INTERVAL = 10;
+}
 
-    sf::RenderWindow window(sf::VideoMode(500, WINDOW_HEIGHT), "Bubble sort demo");
+std::vector<Bar> GenerateBars()
+{
     RandomNumberGenerator rng(1, WINDOW_HEIGHT);
-    const int INTERVAL = 10;
+
     std::vector<Bar> bars;
 
     for (int i = 0; i < BAR_COUNT; ++i)
@@ -27,6 +30,23 @@ int main()
         bars.push_back(bar);
     }
 
+    return bars;
+}
+
+void DisplayBars(sf::RenderWindow& window, std::vector<Bar>& bars)
+{
+    window.clear();
+
+    for(const auto& bar : bars)
+    {
+        window.draw(bar);
+    }
+}
+
+int main()
+{
+    sf::RenderWindow window(sf::VideoMode(BAR_COUNT * 10, WINDOW_HEIGHT), "Bubble sort demo");
+    std::vector<Bar> bars = GenerateBars();
 
     while (window.isOpen())
     {
@@ -37,11 +57,7 @@ int main()
                 window.close();
         }
 
-        window.clear();
-        for(const auto& bar : bars)
-        {
-            window.draw(bar);
-        }
+        DisplayBars(window, bars);
 
         window.display();
     }
