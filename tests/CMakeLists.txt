@@ -20,10 +20,6 @@ if(BUILD_TESTING)
             GTest::gtest_main
             utils)
 
-    target_include_directories(ctest-run-tests
-        PUBLIC
-            ${CMAKE_SOURCE_DIR}/src/utils)
-
     include(GoogleTest)
     gtest_discover_tests(ctest-run-tests)
 endif()
