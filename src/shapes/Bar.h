@@ -1,7 +1,11 @@
 #include <SFML/Graphics.hpp>
 
-class Bar : public sf::RectangleShape
+namespace shapes
 {
-public:
-    Bar(float height);
-};
+    class Bar : public sf::RectangleShape
+    {
+    public:
+        Bar(float height);
+        float GetHeight() const;
+    };
+}
