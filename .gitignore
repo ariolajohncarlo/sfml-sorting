@@ -2,3 +2,5 @@
 [Oo]ut/
 
 compile_commands.json
+
+*.code-workspace
