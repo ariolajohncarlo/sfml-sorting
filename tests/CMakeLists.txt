@@ -9,6 +9,10 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 enable_testing()
+set(gtest_xml_output_args)
+list(APPEND gtest_xml_output_args
+    TEST_XML_OUTPUT_DIR "${CMAKE_BINARY_DIR}/output")
+
 
 if(BUILD_TESTING)
     add_executable(ctest-run-tests
@@ -21,5 +25,5 @@ if(BUILD_TESTING)
             utils)
 
     include(GoogleTest)
-    gtest_discover_tests(ctest-run-tests)
+    gtest_discover_tests(ctest-run-tests ${gtest_xml_output_args})
 endif()
