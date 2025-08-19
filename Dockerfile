@@ -18,6 +18,4 @@ RUN cd cmake-3.28.3 && \
     make && \
     make install
 
-WORKDIR /src
-
-COPY . .
+WORKDIR /project
