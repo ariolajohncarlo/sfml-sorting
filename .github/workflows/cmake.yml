@@ -14,7 +14,7 @@ jobs:
     build:
         name: Check
         runs-on: ubuntu-latest
-        container: docker.io/ariolajohncarlo/sfml:1.2.0
+        container: docker.io/ariolajohncarlo/sfml:1.3.0
 
         steps:
         - name: Setup repository
